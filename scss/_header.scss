@@ -1,0 +1,31 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 0;
+
+  .title {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    color: white;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+
+   
+  }
+
+}
+
+

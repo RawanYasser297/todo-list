@@ -1,0 +1,22 @@
+{
+  "name": "note-app",
+  "version": "1.0.0",
+  "description": "A modern todo/note app built with HTML, SCSS, and Vite.",
+  "license": "ISC",
+  "author": "Rawan Yasser",
+  "type": "module",
+  "main": "index.js",
+  "homepage": "https://rawanyasser297.github.io/Note-App/",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "sass": "^1.80.0",
+    "vite": "^7.1.5"
+  }
+}

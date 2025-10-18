@@ -1,0 +1,194 @@
+.todo-container {
+  height: 600px;
+  max-width: 600px;
+  margin: 1rem auto;
+  width: 100%;
+
+  .todos {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-card);
+
+    //overflow: hidden; // keeps rounded corners on list items
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    align-items: normal;
+  }
+  // Todo list
+  .todo-list {
+    list-style: none;
+    max-height: 260px;
+    overflow-y: auto;
+
+    // Optional: style scrollbar (for modern browsers)
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--border-color);
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: var(--accent);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .todo-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex: 1;
+
+        input[type="checkbox"] {
+          appearance: none;
+          width: 1.25rem;
+          height: 1.25rem;
+          border: 1px solid var(--border-color);
+          border-radius: 50%;
+          cursor: pointer;
+          display: grid;
+          place-items: center;
+
+          &:checked {
+            background: var(--bg-gradient);
+            border: none;
+
+            &::after {
+              content: "✔";
+              font-size: 0.75rem;
+              color: white;
+            }
+
+            /* keyboard focus (only shows when focused by keyboard) */
+
+          }
+          &:focus-visible {
+              outline: 3px solid var(--accent-hover);
+            }
+        }
+
+        .todo-text {
+          font-size: var(--fs-lg);
+          color: var(--text-primary);
+
+          &.completed {
+            color: var(--text-completed);
+            text-decoration: line-through;
+          }
+        }
+      }
+
+      .delete-btn {
+        background: none;
+        border: none;
+        font-size: 1rem;
+        color: var(--text-secondary);
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+          color: var(--accent-hover);
+        }
+      }
+    }
+
+    .todo-empty {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: var(--fs-md);
+      color: var(--text-secondary);
+      font-style: italic;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+
+      .todo-empty-img {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+  }
+
+  // Footer with filters
+  .todo-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    font-size: var(--fs-md);
+    color: var(--text-secondary);
+    margin-top: 1rem;
+
+    .filters {
+      display: flex;
+      gap: 1rem;
+
+      .filter {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text-secondary);
+
+        &.active {
+          color: var(--accent);
+        }
+
+        &:hover,
+        &:focus {
+          color: var(--text-primary);
+        }
+      }
+    }
+
+    .clear-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-secondary);
+
+      &:hover,
+      &:focus {
+        color: var(--text-primary);
+        outline: none; /* remove default browser outline */
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .todo-container {
+    height: 600px;
+    .todos {
+      height: 75%;
+    }
+  }
+
+  .filters {
+    position: absolute;
+    top: 110%;
+    left: 0%;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: var(--bg-card);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+  }
+}

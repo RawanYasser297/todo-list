@@ -1,0 +1,70 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-body);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  height: 33.4%;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: -1;
+  background-image: url("../images/bg-desktop-dark.jpg");
+  background-size: cover;
+  
+  
+  @media (max-width: 480px) {
+    background-image: url("../images/bg-mobile-dark.jpg");
+  }
+
+
+}
+
+body[data-theme="light"]::before {
+  background: url("../images/bg-desktop-light.jpg") no-repeat center/cover;
+  @media (max-width: 480px) {
+    background-image: url("../images/bg-mobile-light.jpg");
+  }
+
+}
+
+
+
+input[type="text"],
+input[type="search"] {
+  all: unset;
+  box-sizing: border-box;
+  width: 100%; }
+
+input:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+/* Transparent autofill background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  background: transparent !important;
+  caret-color: var(--text-primary); // keeps cursor visible
+  transition: background-color 9999s ease-in-out 0s;
+}

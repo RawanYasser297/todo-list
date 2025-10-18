@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  all: unset;           /* removes all inherited/default browser styles */
+  cursor: pointer;      /* add back pointer */
+}
+
+// 2. Root variables
+:root {
+  // Fonts
+  --font-main: "Josefin Sans", sans-serif;
+
+  // Backgrounds
+  --bg-body: hsl(235, 21%, 11%); // dark background
+  --bg-card: hsl(235, 24%, 19%); // todo item background
+  --bg-gradient: linear-gradient(
+    135deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  ); // header gradient
+
+  // Fonts
+  --font-main: "Josefin Sans", sans-serif;
+
+  // Font weights
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  // Font sizes
+  --fs-xl: 2.5rem; // big heading (TODO)
+  --fs-lg: 1.125rem; // tasks / input text
+  --fs-md: 0.875rem; // filter buttons (All, Active, Completed)
+  --fs-sm: 0.75rem; // extra small notes (e.g. "5 items left")
+
+  // Text colors
+  --text-primary: hsl(234, 39%, 85%); // main text
+  --text-secondary: hsl(234, 11%, 52%); // muted text
+  --text-completed: hsl(233, 14%, 35%); // completed todo
+
+  // Accent
+  --accent: hsl(220, 98%, 61%); // blue accent
+  --accent-hover: hsl(280, 87%, 65%); // hover effect
+
+  // Border
+  --border-color: hsl(237, 14%, 26%);
+  //padding
+  --padding : 0 1rem;
+  --margin :1rem auto;
+  --border-radius:5px ;
+}
+
+
+/*  Light theme overrides */
+//give it to <body>
+[data-theme="light"] {
+  --bg-body: hsl(0, 0%, 98%);     // very light gray background
+  --bg-card: hsl(0, 0%, 100%);    // white card
+  --bg-gradient: linear-gradient(
+    135deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  ); // keep gradient same
+
+  --text-primary: hsl(235, 19%, 35%);   // darker text
+  --text-secondary: hsl(236, 9%, 61%);  // muted gray text
+  --text-completed: hsl(233, 11%, 84%); // light gray for completed
+
+  --accent: hsl(220, 98%, 61%);
+  --accent-hover: hsl(280, 87%, 65%);
+
+  --border-color: hsl(233, 11%, 84%);
+}
+
