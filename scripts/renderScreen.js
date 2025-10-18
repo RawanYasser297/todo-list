@@ -25,10 +25,10 @@ export const renderListItems = (filter = "all") => {
       <li class="todo-empty">
         ${
           filter === "unCompleted"
-            ? "<img class='todo-empty-img' src='../images/target.png' alt='' /> No active tasks!"
+            ? "<img class='todo-empty-img' src='/images/target.png' alt='' /> No active tasks!"
             : filter === "completed"
-            ? "<img class='todo-empty-img' src='../images/checklist.png' alt='' /> No completed tasks yet!"
-            : "<img class='todo-empty-img' src='../images/order.png' alt='' /> Your list is empty!"
+            ? "<img class='todo-empty-img' src='/images/checklist.png' alt='' /> No completed tasks yet!"
+            : "<img class='todo-empty-img' src='/images/order.png' alt='' /> Your list is empty!"
         }
       </li>`;
     return;
